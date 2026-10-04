@@ -10,3 +10,6 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule: { interval: monthly }
+    groups:   # spike S7, step 2: one PR for both engine refs
+      engine:
+        patterns: ["hangfolio/spike-engine-aged/*"]
