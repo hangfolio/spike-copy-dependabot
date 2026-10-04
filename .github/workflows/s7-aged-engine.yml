@@ -1,0 +1,22 @@
+# Spike S7 only. The same caller as deploy.yml, pointed at hangfolio/spike-engine-aged, whose v2 tag
+# is dated older than Dependabot's default 3-day cooldown. Pages is off in this repository, so the
+# deploy job is always skipped.
+name: S7 aged engine
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  build:
+    uses: hangfolio/spike-engine-aged/.github/workflows/build.yml@v1
+    permissions:
+      contents: read
+      pages: read
+  deploy:
+    needs: build
+    if: needs.build.outputs.deploy == 'true'
+    uses: hangfolio/spike-engine-aged/.github/workflows/deploy.yml@v1
+    permissions:
+      pages: write
+      id-token: write
