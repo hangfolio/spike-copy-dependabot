@@ -9,7 +9,7 @@ on:
 permissions: {}
 jobs:
   build:
-    uses: hangfolio/spike-engine-aged/.github/workflows/build.yml@v1
+    uses: hangfolio/spike-engine-aged/.github/workflows/build.yml@v2
     permissions:
       contents: read
       pages: read
