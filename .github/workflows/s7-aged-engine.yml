@@ -16,7 +16,7 @@ jobs:
   deploy:
     needs: build
     if: needs.build.outputs.deploy == 'true'
-    uses: hangfolio/spike-engine-aged/.github/workflows/deploy.yml@v1
+    uses: hangfolio/spike-engine-aged/.github/workflows/deploy.yml@v2
     permissions:
       pages: write
       id-token: write
